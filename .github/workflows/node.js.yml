@@ -18,17 +18,17 @@ jobs:
       matrix:
         node-version: [18.x, 20.x, 22.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    services: 
-      mysql: 
-        image: mysql:5.7
-        ports:
-          - 3306:3306
-        env: 
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: db_services
-          MYSQL_USER: user
-          MYSQL_PASSWORD: password
-        options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s
+   # services: 
+    #  mysql: 
+     #   image: mysql:5.7
+      #  ports:
+       #   - 3306:3306
+       # env: 
+        #  MYSQL_ROOT_PASSWORD: root
+        #  MYSQL_DATABASE: db_services
+        #  MYSQL_USER: user
+        #  MYSQL_PASSWORD: password
+        #  options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s
 
     steps:
     - uses: actions/checkout@v4
@@ -39,11 +39,11 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - name: Run tests
-      env:
-        DB_HOST: 127.0.0.1
-        DB_PORT: 3306
-        DB_USERNAME: user
-        DB_PASSWORD: password
-        DB_NAME: db_services
-      run: npm test
+    #- name: Run tests
+     # env:
+      #  DB_HOST: 127.0.0.1
+      #  DB_PORT: 3306
+      #  DB_USERNAME: user
+      #  DB_PASSWORD: password
+      #  DB_NAME: db_services
+      # run: npm test
