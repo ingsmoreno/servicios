@@ -19,6 +19,18 @@ jobs:
         node-version: [18.x, 20.x, 22.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    services: 
+      mysql: 
+        image: mysql:5.7
+        ports:
+          - 3306: 3306
+        env: 
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: db_services
+          MYSQL_USER: user
+          MYSQL_PASSWORD: password
+        options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s
+
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
