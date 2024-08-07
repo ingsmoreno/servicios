@@ -11,10 +11,7 @@
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint .",
-    "dev": "ts-node src/db/conexion.ts",
     "test": "jest",
-    "build": "npx tsc src/db/conexion.ts",
-    "start": "node dist/db/conexion.js",
     "prepare": "husky"
   },
   "keywords": [],
