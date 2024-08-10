@@ -22,24 +22,24 @@ export const buscar_un_usuario = async (id_usuario: number): Promise<UsuarioMode
 };
 
 export const actualizar_datos_usuario = async (id_usuarios: number, field: string, oldValue: string | number , callback: Callback_buscar_un_usuario ) => {
-        try {
-            const User = await callback(id_usuarios); 
-            const idUser = User?.id_usuario;
-            const user_updated = await UsuarioModel.update(
-                 { [field]: oldValue },
-                 {
-                     where: {
-                         id_usuario: idUser
-                     },
-             });
-             if (user_updated[0] === 0){
-                throw new Error (`campo: ${field} no encontrado`);
-             }
+    try {
+        const User = await callback(id_usuarios); 
+        const idUser = User?.id_usuario;
+        const user_updated = await UsuarioModel.update(
+                { [field]: oldValue },
+                {
+                    where: {
+                        id_usuario: idUser
+                    },
+            });
+            if (user_updated[0] === 0){
+            throw new Error (`campo: ${field} no encontrado`);
+            }
 
-        } catch (error) {
-           console.log(error);
-           throw new Error('No se pudo realizar la actualizacion al usuario');
-        }
+    } catch (error) {
+        console.log(error);
+        throw new Error('No se pudo realizar la actualizacion al usuario');
+    }
 };
 
 
