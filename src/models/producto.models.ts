@@ -1,9 +1,9 @@
 import { DataTypes, Model } from 'sequelize';
-const sequelize = new Conexion().sequelize;
 import Conexion from "../db/conexion";
+const sequelize = new Conexion().sequelize;
     
 export class ProductoModel extends Model{
-    public id!: number;
+    public id_producto!: number;
     public nombre!: string;
     public disponibles!: string;
 }
@@ -13,14 +13,14 @@ ProductoModel.init({
         allowNull: false,
         type: DataTypes.INTEGER,
     },
-    id: {
+    id_producto: {
         allowNull: false,
         primaryKey: true,
         type: DataTypes.INTEGER,
         },
     nombre: {
         allowNull: false,
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
     },
     }, {
         sequelize,
