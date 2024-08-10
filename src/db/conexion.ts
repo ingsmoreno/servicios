@@ -2,17 +2,6 @@
 import CONFIG from '../config';
 import { Sequelize } from 'sequelize';
 
-interface IParameters {
-    id_usuario: number
-    nombre: string,
-    apellido: string,
-    telefono: string,
-    pais: string,
-    email: string,
-    contrasena: string,
-    rol: string,
-}
-
 export class Conexion {
     public sequelize: Sequelize;
     constructor(){
@@ -34,17 +23,8 @@ export class Conexion {
             });
         }
 
-   async Ejecutar_SP(procedimiento: string, parametros: IParameters[]){
-    parametros.forEach(async elemetos => {
-        await this.sequelize.query(`CALL ${procedimiento}(${elemetos.id_usuario},
-             "${elemetos.nombre}",
-             "${elemetos.apellido}",
-             "${elemetos.telefono}",
-             "${elemetos.pais}",
-             "${elemetos.email}",
-             "${elemetos.contrasena}",
-             "${elemetos.rol}")`);
-    });
+   async Ejecutar_SP(procedimiento: string){
+    await this.sequelize.query(`CALL ${procedimiento}`);
    }
 }
 
