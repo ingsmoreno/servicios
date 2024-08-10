@@ -1,6 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import Conexion from "../db/conexion";
-
+import { Conexion } from "../db/conexion";
 const sequelize = new Conexion().sequelize;
 
 export class PedidoModel extends Model{
@@ -34,6 +33,6 @@ PedidoModel.init({
     }
 }, {
     sequelize,
-    tableName: 'pedido'
+    tableName: 'pedidos'
     }
 );

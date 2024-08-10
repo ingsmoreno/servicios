@@ -53,7 +53,7 @@ DetallePedidoModel.belongsTo(PerfilModel, {
 
 //Perfiles
 ProductoModel.hasMany(PerfilModel, {
-    as: 'Perfil',
+    as: 'perfil',
     foreignKey: 'id_producto',
     sourceKey: 'id_producto',
 });
