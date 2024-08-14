@@ -2,7 +2,7 @@ import { DetallePedidoModel } from "./detallePedido.models";
 import { PedidoModel } from "./pedidos.models";
 import { PerfilModel } from "./perfiles.models";
 import { ProductoModel } from "./producto.models";
-import { UsuarioModel } from "../usuarios/usuarios.models";
+import { UsuarioModel } from "../entities/usuarios/usuarios.models";
 
 
 //Pedidos

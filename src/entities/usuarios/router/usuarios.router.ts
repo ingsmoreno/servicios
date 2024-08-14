@@ -1,8 +1,8 @@
-import { buscarUnUsuario, buscarUsuarios, crearUsuario } from "./controller/usuario.buscar";
-import { actualizarDatosUsuario } from "./controller/usuario.actualizar";
-import { eliminarUnUsuario } from "./controller/usuario.eliminar";
+import { buscarUnUsuario, buscarUsuarios, crearUsuario } from "../controllers/usuario.buscar";
+import { actualizarDatosUsuario } from "../controllers/usuario.actualizar";
+import { eliminarUnUsuario } from "../controllers/usuario.eliminar";
 import express from "express";
-import { validateExistenceUserId } from "./controller/usuarios.middleware";
+import { validateExistenceUserId } from "../controllers/middlewares/usuarios.middleware";
 
 
 export const router = express.Router();

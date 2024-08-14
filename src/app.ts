@@ -1,6 +1,6 @@
 import cookieParser from 'cookie-parser';
 import express from "express";
-import { router as usuariosRouter }  from './usuarios/usuarios.router';
+import { router as usuariosRouter }  from './entities/usuarios/router/usuarios.router';
 
 export const app = express();
 app.use(express.json({ limit: '10kb' }));

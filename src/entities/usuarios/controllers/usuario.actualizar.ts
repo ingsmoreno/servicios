@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { UsuarioModel } from '../../usuarios/usuarios.models';
+import { UsuarioModel } from '../models/usuarios.models';
 
 export const actualizarDatosUsuario = async (req: Request, response: Response, next: NextFunction ) => {
     try {
