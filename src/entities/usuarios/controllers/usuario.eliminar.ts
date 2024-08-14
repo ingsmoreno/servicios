@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
-import { UsuarioModel } from '../../usuarios/usuarios.models';
+import { UsuarioModel } from '../models/usuarios.models';
+
 
 export const eliminarUnUsuario = async (req: Request, response: Response) => {
     try {

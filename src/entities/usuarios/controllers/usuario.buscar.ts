@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { UsuarioModel } from '../../usuarios/usuarios.models';
+import { UsuarioModel } from '../models/usuarios.models';
+
 
 export const buscarUsuarios = async (req: Request, response: Response) => {
     const usuarios = await UsuarioModel.findAll();

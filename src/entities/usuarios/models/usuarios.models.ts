@@ -1,5 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import { Conexion } from "../db/conexion";
+import { Conexion } from "../../../db/conexion";
 const sequelize = new Conexion().sequelize;
 
 export class UsuarioModel extends Model {
