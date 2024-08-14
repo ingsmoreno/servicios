@@ -2,7 +2,7 @@ import { buscarUnUsuario, buscarUsuarios, crearUsuario } from "./controller/usua
 import { actualizarDatosUsuario } from "./controller/usuario.actualizar";
 import { eliminarUnUsuario } from "./controller/usuario.eliminar";
 import express from "express";
-import { validateExistenceUserId } from "./controller/usuarios.controller";
+import { validateExistenceUserId } from "./controller/usuarios.middleware";
 
 
 export const router = express.Router();
