@@ -4,6 +4,12 @@ import { UsuarioModel } from '../models/usuarios.models';
 export const actualizarDatosUsuario = async (req: Request, response: Response, next: NextFunction ) => {
     try {
         const usuario = await UsuarioModel.findOne({ where: { id_usuario: req.params.id } });
+        if (usuario === null){
+            return response.status(404).json({
+                message: 'Usuario no encontrado',
+                status: 'error',
+            });
+        }
         const idUser = usuario?.id_usuario;
 
         const user_updated = await UsuarioModel.update(

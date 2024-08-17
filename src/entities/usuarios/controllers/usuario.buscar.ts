@@ -4,8 +4,14 @@ import { UsuarioModel } from '../models/usuarios.models';
 
 export const buscarUsuarios = async (req: Request, response: Response) => {
     const usuarios = await UsuarioModel.findAll();
+    if (usuarios === null){
+        return response.status(404).json({
+            message: 'Usuario no encontrado',
+            status: 'error',
+        });
+    }
 
-    response
+    return response
         .status(200)
         .json({
             data: usuarios,
