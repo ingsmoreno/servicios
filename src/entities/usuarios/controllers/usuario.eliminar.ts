@@ -5,6 +5,12 @@ import { UsuarioModel } from '../models/usuarios.models';
 export const eliminarUnUsuario = async (req: Request, response: Response) => {
     try {
         const usuario = await UsuarioModel.findOne({ where: { id_usuario: req.params.id } });
+        if (usuario === null){
+            return response.status(404).json({
+                message: 'Usuario no encontrado',
+                status: 'error',
+            });
+        }
         const idUser = usuario?.id_usuario;
         UsuarioModel.destroy(
             {

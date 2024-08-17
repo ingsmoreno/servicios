@@ -28,4 +28,4 @@ export class Conexion {
    }
 }
 
-export default Conexion;
+export const sequelize = new Conexion().sequelize;
