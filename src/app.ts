@@ -1,5 +1,6 @@
 import cookieParser from 'cookie-parser';
 import express from "express";
+import { router as perfilesRouter }  from './entities/perfiles/router/perfiles.router';
 import { router as productosRouter }  from './entities/productos/router/productos.router';
 import { router as usuariosRouter }  from './entities/usuarios/router/usuarios.router';
 
@@ -10,3 +11,4 @@ app.use(cookieParser());
 
 app.use('/api/v1/usuarios', usuariosRouter);  
 app.use('/api/v1/productos', productosRouter);  
+app.use('/api/v1/perfiles', perfilesRouter);  
