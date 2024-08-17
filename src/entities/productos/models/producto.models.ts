@@ -1,6 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import Conexion from "../db/conexion";
-const sequelize = new Conexion().sequelize;
+import { sequelize } from "../../../db/conexion";
     
 export class ProductoModel extends Model{
     public id_producto!: number;

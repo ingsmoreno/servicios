@@ -12,7 +12,7 @@ export const eliminarUnUsuario = async (req: Request, response: Response) => {
             });
         }
         const idUser = usuario?.id_usuario;
-        UsuarioModel.destroy(
+        await UsuarioModel.destroy(
             {
                 where: {
                     id_usuario: idUser,
@@ -20,7 +20,7 @@ export const eliminarUnUsuario = async (req: Request, response: Response) => {
             });
 
         return response
-            .status(200)
+            .status(204)
             .json({
                 status: 'success',
             });
