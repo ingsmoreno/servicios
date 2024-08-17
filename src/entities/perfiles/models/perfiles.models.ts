@@ -1,7 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import Conexion from "../db/conexion";
-
-const sequelize = new Conexion().sequelize;
+import { sequelize } from "../../../db/conexion";
 
 export class PerfilModel extends Model{
     public id_perfil!: number;
