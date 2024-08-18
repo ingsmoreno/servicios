@@ -1,5 +1,6 @@
-import { buscarUnUsuario, buscarUsuarios, crearUsuario } from "../controllers/usuario.buscar";
+import { buscarUnUsuario, buscarUsuarios } from "../controllers/usuario.buscar";
 import { actualizarDatosUsuario } from "../controllers/usuario.actualizar";
+import { crearUsuario } from "../controllers/usuarios.crear";
 import { eliminarUnUsuario } from "../controllers/usuario.eliminar";
 import express from "express";
 
