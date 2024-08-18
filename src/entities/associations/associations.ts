@@ -1,8 +1,8 @@
-import { DetallePedidoModel } from "./detallePedido.models";
-import { PedidoModel } from "./pedidos.models";
-import { PerfilModel } from "./perfiles.models";
-import { ProductoModel } from "./producto.models";
-import { UsuarioModel } from "../entities/usuarios/usuarios.models";
+import { DetallePedidoModel } from "../detallePedido/models/detallePedido.models";
+import { PedidoModel } from "../pedidos/models/pedidos.models";
+import { PerfilModel } from "../perfiles/models/perfiles.models";
+import { ProductoModel } from "../productos/models/producto.models";
+import { UsuarioModel } from "../usuarios/models/usuarios.models";
 
 
 //Pedidos

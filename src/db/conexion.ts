@@ -2,7 +2,7 @@
 import CONFIG from '../config';
 import { Sequelize } from 'sequelize';
 
-export class Conexion {
+class Conexion {
     public sequelize: Sequelize;
     constructor(){
          this.sequelize = new Sequelize('db_services', CONFIG.DB_USERNAME, CONFIG.DB_PASSWORD, 
@@ -22,7 +22,8 @@ export class Conexion {
 
             });
         }
-
+        
+        // Not in use.
    async Ejecutar_SP(procedimiento: string){
     await this.sequelize.query(`CALL ${procedimiento}`);
    }
